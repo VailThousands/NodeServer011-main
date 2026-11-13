@@ -1,0 +1,32 @@
+/* Shared depth and motion for Amber Tech pages. */
+:root { --motion-ease: cubic-bezier(.2,.75,.25,1); }
+html { scroll-behavior: smooth; }
+.motion-ready .reveal { opacity: 0; transform: translate3d(0, 24px, 0); transition: opacity .7s var(--motion-ease), transform .7s var(--motion-ease); }
+.motion-ready .reveal.is-visible { opacity: 1; transform: translate3d(0, 0, 0); }
+.motion-ready .reveal[data-delay="1"] { transition-delay: .08s; }
+.motion-ready .reveal[data-delay="2"] { transition-delay: .16s; }
+.motion-ready .reveal[data-delay="3"] { transition-delay: .24s; }
+.hero-art, .hero-art .ring, .hero-art .art-orbit { transform-style: preserve-3d; }
+.hero-art .art-orbit, .hero-art .ring { animation: orbit-turn 38s linear infinite; }
+.hero-art .art-glow { animation: glow-breathe 6s ease-in-out infinite alternate; }
+.hero-art .device { animation: device-hover 7s ease-in-out infinite; transform-style: preserve-3d; }
+.hero-art .monogram { animation: monogram-hover 7s ease-in-out infinite; transform-style: preserve-3d; }
+.float-card { animation: float-card 6s ease-in-out infinite; }
+.float-two { animation-delay: -2.5s; }
+.depth-card { will-change: transform; transform-style: preserve-3d; transition: transform .28s var(--motion-ease), box-shadow .28s var(--motion-ease), border-color .28s ease; }
+.depth-card:hover { transform: perspective(900px) rotateX(var(--tilt-y, 0deg)) rotateY(var(--tilt-x, 0deg)) translateY(-6px); box-shadow: 0 24px 48px #1719141c; border-color: #cbd89e; }
+.button, .nav-cta, .round-arrow { transition: transform .22s var(--motion-ease), box-shadow .22s ease, background-color .22s ease; }
+.button:hover, .nav-cta:hover { box-shadow: 0 9px 22px #17191420; }
+.round-arrow:hover { transform: translate(2px,-2px) rotate(6deg); }
+@keyframes orbit-turn { to { rotate: 360deg; } }
+@keyframes glow-breathe { from { opacity: .18; scale: .88; } to { opacity: .38; scale: 1.12; } }
+@keyframes device-hover { 0%,100% { translate: 0 0; } 50% { translate: 0 -10px; } }
+@keyframes monogram-hover { 0%,100% { translate: 0 0; } 50% { translate: 0 -9px; } }
+@keyframes float-card { 0%,100% { translate: 0 0; } 50% { translate: 0 -7px; } }
+@media (hover: none), (max-width: 700px) { .depth-card:hover { transform: translateY(-3px); } }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .motion-ready .reveal, .motion-ready .reveal.is-visible { opacity: 1; transform: none; transition: none; }
+  .hero-art .art-orbit, .hero-art .ring, .hero-art .art-glow, .hero-art .device, .hero-art .monogram, .float-card { animation: none; }
+  .depth-card, .depth-card:hover, .button, .nav-cta, .round-arrow { transition: none; transform: none; }
+}

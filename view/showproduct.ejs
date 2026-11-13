@@ -1,0 +1,23 @@
+<main class="show-product">
+  <section class="detail-section"><div class="wrap">
+    <a class="back-link" href="/Product.html">← กลับไปหน้าสินค้า</a>
+    <div class="detail-grid">
+      <div class="detail-visual"><span class="detail-glow"></span><span class="detail-emoji" aria-hidden="true"><%= product.emoji %></span><span class="detail-badge"><%= product.badge %></span></div>
+      <article class="detail-content">
+        <p class="detail-category"><%= product.categoryLabel %></p>
+        <h1><%= product.name %></h1>
+        <p class="detail-summary"><%= product.shortDescription %></p>
+        <p class="detail-price">฿<%= product.formattedPrice %></p>
+        <div class="detail-divider"></div>
+        <h2>รายละเอียดสินค้า</h2>
+        <p class="detail-description"><%= product.description %></p>
+        <h2>ข้อมูลสินค้า</h2>
+        <ul class="spec-list">
+          <% product.specs.forEach((spec) => { %><li><span class="spec-check">✓</span><span><%= spec %></span></li><% }) %>
+        </ul>
+        <div class="detail-actions"><a class="button button-lime" href="/Product.html">เลือกดูสินค้าอื่น <span aria-hidden="true">↗</span></a><a class="button button-outline" href="/about">เกี่ยวกับ Amber Tech</a></div>
+        <p class="detail-note">ราคาและรายละเอียดในหน้านี้มาจากข้อมูลสินค้าในโปรเจกต์</p>
+      </article>
+    </div>
+  </div></section>
+</main>

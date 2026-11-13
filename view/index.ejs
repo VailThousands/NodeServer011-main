@@ -1,0 +1,18 @@
+<main>
+  <section class="home-hero"><div class="wrap hero-grid">
+    <div class="hero-copy"><span class="eyebrow">TECH THAT FITS YOU</span><h1>อุปกรณ์ที่ใช่<br>ให้ทุกวันไปได้<br><span>ไกลกว่าเดิม</span></h1><p>เลือกคอมพิวเตอร์และแกดเจ็ตได้ง่ายขึ้น ด้วยตัวเลือกที่คัดมาแล้ว พร้อมคำแนะนำที่เข้าใจการใช้งานจริง</p><div class="hero-actions"><a class="button button-lime" href="/Product.html">ค้นหาชิ้นโปรด ↗</a><a class="button button-outline" href="/about">รู้จัก Amber Tech</a></div><div class="hero-note">✳ เริ่มจากสิ่งที่คุณอยากทำ แล้วเลือกเทคโนโลยีให้พอดี</div></div>
+    <div class="hero-art" aria-label="ภาพประกอบแล็ปท็อปสไตล์มินิมอล"><div class="art-orbit"></div><div class="device"><div class="device-screen">✳</div></div><div class="device-base"></div><div class="float-card float-one">✦ เลือกง่าย ใช้ได้จริง</div><div class="float-card float-two">⌁ พร้อมไปต่อ</div></div>
+  </div></section>
+  <section class="section" id="categories"><div class="wrap"><div class="section-head"><div><span class="eyebrow">BROWSE YOUR WAY</span><h2>เริ่มจากหมวดที่ใช่</h2></div><p>อัปเกรดโต๊ะทำงาน จัดเซ็ตเกม หรือหาอุปกรณ์ชิ้นใหม่ ลองเริ่มจากหมวดที่เหมาะกับคุณ</p></div><div class="category-grid">
+    <a class="category-card" href="/Product.html"><span class="category-icon">🧩</span><h3>อุปกรณ์ภายใน</h3><p>CPU · RAM · SSD</p></a>
+    <a class="category-card" href="/Product.html"><span class="category-icon">⌨️</span><h3>เกมมิ่งเกียร์</h3><p>คีย์บอร์ด · เมาส์</p></a>
+    <a class="category-card" href="/Product.html"><span class="category-icon">🖥️</span><h3>จอและอุปกรณ์เสริม</h3><p>จอภาพ · อุปกรณ์โต๊ะ</p></a>
+    <a class="category-card" href="/Product.html"><span class="category-icon">🎧</span><h3>เสียงและสตรีมมิง</h3><p>หูฟัง · ไมโครโฟน</p></a>
+  </div></div></section>
+  <section class="section products" id="products"><div class="wrap"><div class="section-head"><div><span class="eyebrow">FAN FAVORITES</span><h2>ชิ้นโปรดที่คนเลือกบ่อย</h2></div><p>ไอเดียเริ่มต้นสำหรับอัปเกรดอุปกรณ์รอบตัว เลือกดูสินค้าได้ในหน้ารวม</p></div><div class="product-grid">
+    <% products.forEach((product) => { %>
+      <a class="product-card" href="/ShowProduct/<%= product.id %>"><div class="product-visual"><%= product.emoji %></div><div class="product-info"><h3><%= product.name %></h3><p><%= product.shortDescription %></p><span class="price">฿<%= product.formattedPrice %></span></div></a>
+    <% }) %>
+  </div><div class="hero-actions"><a class="button" href="/Product.html">ดูสินค้าทั้งหมด ↗</a></div></div></section>
+  <section class="section"><div class="wrap story-banner"><div><span class="eyebrow">A LITTLE ABOUT US</span><h2>เทคโนโลยีที่ดี เริ่มจากเข้าใจคนใช้</h2><p>เราอยากทำให้การเลือกอุปกรณ์ไอทีเป็นเรื่องสบายใจ มีข้อมูลพอดี และได้ของที่เหมาะกับชีวิตประจำวันของคุณ</p></div><a class="button button-lime" href="/about">ทำความรู้จักเรา →</a></div></section>
+</main>

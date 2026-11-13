@@ -1,0 +1,29 @@
+<main>
+  <section class="hero"><div class="wrap hero-grid">
+    <div><span class="eyebrow">THE AMBER TECH COLLECTION</span><h1>อุปกรณ์ดี ๆ<br>สำหรับ <span>ทุกไอเดีย</span></h1><p>เลือกดูอุปกรณ์คอมพิวเตอร์และแกดเจ็ตที่คัดสรรมาให้ ค้นหาตามหมวดหมู่หรือพิมพ์ชื่อสินค้า</p></div>
+    <div class="stats"><div class="stat"><b><%= products.length.toString().padStart(2, '0') %></b><span>สินค้าในแคตตาล็อก</span></div><div class="stat"><b>ค้นหาได้</b><span>เลือกของได้ง่ายขึ้น</span></div></div>
+  </div></section>
+  <section class="catalog"><div class="wrap">
+    <div class="toolbar"><div class="filters" role="group" aria-label="กรองสินค้า">
+      <button class="filter" data-filter="all" aria-pressed="true">ทั้งหมด</button><button class="filter" data-filter="gaming" aria-pressed="false">เกมมิ่งเกียร์</button><button class="filter" data-filter="computer" aria-pressed="false">อุปกรณ์คอม</button><button class="filter" data-filter="display" aria-pressed="false">จอและเสริม</button><button class="filter" data-filter="audio" aria-pressed="false">เสียง</button>
+    </div><div class="search-sort"><input class="search" id="productSearch" type="search" placeholder="ค้นหาสินค้า..." aria-label="ค้นหาสินค้า"><select class="sort" id="productSort" aria-label="เรียงสินค้า"><option value="featured">แนะนำ</option><option value="low">ราคาต่ำไปสูง</option><option value="high">ราคาสูงไปต่ำ</option></select></div></div>
+    <p class="count" id="resultCount" aria-live="polite">สินค้าแนะนำ</p>
+    <div class="grid" id="productGrid">
+      <% products.forEach((product) => { %>
+        <article class="card" data-category="<%= product.category %>" data-name="<%= product.name %>" data-price="<%= product.price %>">
+          <a class="product-card-link" href="/ShowProduct/<%= product.id %>" aria-label="ดูรายละเอียด <%= product.name %>">
+            <div class="visual"><span><%= product.emoji %></span><span class="badge"><%= product.badge %></span></div>
+            <div class="info"><p class="category"><%= product.categoryLabel %></p><h2><%= product.name %></h2><p><%= product.shortDescription %></p><div class="bottom"><span class="price">฿<%= product.formattedPrice %></span><span class="ready">ดูรายละเอียด ↗</span></div></div>
+          </a>
+        </article>
+      <% }) %>
+    </div>
+    <div class="empty" id="emptyState">ไม่พบสินค้าที่ตรงกับคำค้น ลองเปลี่ยนคำค้นหรือหมวดหมู่</div>
+    <nav class="pagination" id="pagination" aria-label="แบ่งหน้าสินค้า">
+      <button class="page-arrow" id="previousPage" type="button" aria-label="หน้าก่อนหน้า">← ก่อนหน้า</button>
+      <div class="page-numbers" id="pageNumbers"></div>
+      <button class="page-arrow" id="nextPage" type="button" aria-label="หน้าถัดไป">ถัดไป →</button>
+    </nav>
+  </div></section>
+  <section class="wrap about-banner"><div><h2>อยากรู้จักร้านเราเพิ่มไหม?</h2><p>อ่านแนวคิดเบื้องหลังการคัดเลือกอุปกรณ์ของ Amber Tech</p></div><a class="button" href="/about">เกี่ยวกับเรา ↗</a></section>
+</main>

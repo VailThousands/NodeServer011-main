@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#11120f">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/site.css">
+  <% if (cssFile) { %><link rel="stylesheet" href="<%= cssFile %>"><% } %>
+  <link rel="stylesheet" href="/motion.css">
+</head>
+<body>
+  <div class="announcement">คัดสรรอุปกรณ์ไอทีให้ใช้งานได้เต็มที่ ในแบบที่เป็นคุณ <span aria-hidden="true">✳</span></div>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="เมนูหลัก">
+      <a class="brand" href="/" aria-label="Amber Tech หน้าแรก"><span class="brand-mark">A</span><span>amber<span class="brand-accent">tech</span></span></a>
+      <div class="nav-links">
+        <a href="/" <%= activePage === 'home' ? 'aria-current="page"' : '' %>>หน้าแรก</a>
+        <a href="/Product.html" <%= activePage === 'product' ? 'aria-current="page"' : '' %>>สินค้า</a>
+        <a href="/about" <%= activePage === 'about' ? 'aria-current="page"' : '' %>>เกี่ยวกับเรา</a>
+      </div>
+      <a class="nav-cta" href="/Product.html">เลือกดูสินค้า <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+  <%- body %>
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <a class="brand" href="/"><span class="brand-mark">A</span><span>amber<span class="brand-accent">tech</span></span></a>
+      <span class="footer-note">อุปกรณ์ที่ใช่ สำหรับทุกไอเดียของคุณ</span>
+      <div class="footer-links"><a href="/">หน้าแรก</a><a href="/Product.html">สินค้า</a><a href="/about">เกี่ยวกับเรา</a></div>
+    </div>
+  </footer>
+  <script src="/motion.js" defer></script>
+  <% if (jsFile) { %><script src="<%= jsFile %>" defer></script><% } %>
+</body>
+</html>
